@@ -4,7 +4,7 @@
 #
 Name     : rubygem-mini_portile
 Version  : 0.6.2
-Release  : 4
+Release  : 5
 URL      : https://rubygems.org/downloads/mini_portile-0.6.2.gem
 Source0  : https://rubygems.org/downloads/mini_portile-0.6.2.gem
 Summary  : No detailed summary available
@@ -27,17 +27,17 @@ gem spec %{SOURCE0} -l --ruby > rubygem-mini_portile.gemspec
 gem build rubygem-mini_portile.gemspec
 
 %install
-gem_dir=$(ruby -e'puts Gem.default_dir')
+%global gem_dir $(ruby -e'puts Gem.default_dir')
 gem install -V \
 --local \
 --force \
---install-dir .${gem_dir} \
+--install-dir .%{gem_dir} \
 --bindir .%{_bindir} \
 mini_portile-0.6.2.gem
 
-mkdir -p %{buildroot}${gem_dir}
-cp -pa .${gem_dir}/* \
-%{buildroot}${gem_dir}
+mkdir -p %{buildroot}%{gem_dir}
+cp -pa .%{gem_dir}/* \
+%{buildroot}%{gem_dir}
 
 if [ -d .%{_bindir} ]; then
 mkdir -p %{buildroot}%{_bindir}
@@ -45,63 +45,14 @@ cp -pa .%{_bindir}/* \
 %{buildroot}%{_bindir}/
 fi
 
+
 %files
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/cache/mini_portile-0.6.2.gem
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/activate-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/archives_path-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/cdesc-MiniPortile.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/compile-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/computed_options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/configure-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/configure_defaults-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/configure_options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/configure_prefix-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/configured%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/cook-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/detect_host-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/download-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/download_file-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/download_file_ftp-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/download_file_http-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/downloaded%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/execute-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/extract-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/extract_file-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/files-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/gcc_cmd-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/host-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/install-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/installed%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/log_file-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/logger-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/make_cmd-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/message-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/name-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/newer%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/original_host-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/output-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/patch-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/patch_files-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/path-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/port_path-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/tar_compression_switch-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/tar_exe-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/target-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/tmp_path-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/version-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/which-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/with_tempfile-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/MiniPortile/work_path-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/page-History_txt.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/page-LICENSE_txt.ri
-/usr/lib64/ruby/gems/2.2.0/doc/mini_portile-0.6.2/ri/page-README_rdoc.ri
-/usr/lib64/ruby/gems/2.2.0/gems/mini_portile-0.6.2/History.txt
-/usr/lib64/ruby/gems/2.2.0/gems/mini_portile-0.6.2/LICENSE.txt
-/usr/lib64/ruby/gems/2.2.0/gems/mini_portile-0.6.2/README.rdoc
-/usr/lib64/ruby/gems/2.2.0/gems/mini_portile-0.6.2/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/mini_portile-0.6.2/examples/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/mini_portile-0.6.2/lib/mini_portile.rb
-/usr/lib64/ruby/gems/2.2.0/specifications/mini_portile-0.6.2.gemspec
+/usr/lib64/ruby/gems/2.3.0/cache/mini_portile-0.6.2.gem
+/usr/lib64/ruby/gems/2.3.0/gems/mini_portile-0.6.2/History.txt
+/usr/lib64/ruby/gems/2.3.0/gems/mini_portile-0.6.2/LICENSE.txt
+/usr/lib64/ruby/gems/2.3.0/gems/mini_portile-0.6.2/README.rdoc
+/usr/lib64/ruby/gems/2.3.0/gems/mini_portile-0.6.2/Rakefile
+/usr/lib64/ruby/gems/2.3.0/gems/mini_portile-0.6.2/examples/Rakefile
+/usr/lib64/ruby/gems/2.3.0/gems/mini_portile-0.6.2/lib/mini_portile.rb
+/usr/lib64/ruby/gems/2.3.0/specifications/mini_portile-0.6.2.gemspec

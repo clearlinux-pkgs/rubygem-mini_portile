@@ -1,0 +1,4 @@
+# File auto-generated with 'Watchfile generator'
+# 2016-03-23 21:32:46.113694
+# {'~>0.6.0', 'development', '~>0.6.1'}
+watchurl=https://rubygems.org/gems/mini_portile/versions/(0\.[0-6](?:\.[0-9]{1,2})*)
